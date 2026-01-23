@@ -1,8 +1,132 @@
-# hindi-facts
 <!DOCTYPE html>
-<html>
+<html lang="hi">
+<head>
+<title>FactVerse Hindi  Amazing & Viral Facts</title>
+
+<meta name="description" content="     ,            ">
+
+<meta name="keywords" content="Hindi facts, interesting facts, viral facts, amazing facts">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ЁЯФе Daily Hindi Facts</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 95%;
+  max-width: 500px;
+  background: #111827;
+  padding: 25px 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.container:hover {
+  box-shadow: 0 15px 40px rgba(0, 255, 255, 0.35);
+}
+
+h1 {
+  color: #38bdf8;
+  font-size: 26px;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+.fact {
+  font-size: 19px;
+  line-height: 1.6;
+  margin: 20px 0;
+  min-height: 80px;
+  padding: 10px 15px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.fact:hover {
+  background: rgba(56, 189, 248, 0.15);
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  background: #38bdf8;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #0ea5e9;
+}
+</style>
+</head>
 <body>
-<h1>Hindi Facts</h1>
-<p>Website sahi se kaam kar rahi hai ✅</p>
+
+<div class="container">
+  <h1>ЁЯФе Daily Hindi Facts</h1>
+  <div class="fact" id="fact">Loading...</div>
+  <button onclick="nextFact()">Next Fact</button>
+</div>
+
+<script>
+const sheetID = "1_Cii6lhjbcQy3hO3lvdb_yn3HrZF9cmRNpPY2OISXBw";
+const sheetName = "Sheet1";
+const url = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=out:json&sheet=${sheetName}`;
+
+let facts = [];
+let index = 0;
+
+// Google Sheet рд╕реЗ facts fetch рдХрд░рдирд╛
+function fetchFacts(){
+  fetch(url)
+  .then(res => res.text())
+  .then(data => {
+    const json = JSON.parse(data.substring(47).slice(0,-2));
+    facts = json.table.rows.map(r => r.c[0]?.v).filter(Boolean);
+    showFact();
+  });
+}
+
+// Fact рджрд┐рдЦрд╛рдирд╛
+function showFact(){
+  if(facts.length > 0){
+    document.getElementById("fact").innerText = facts[index];
+  } else {
+    document.getElementById("fact").innerText = "No facts found";
+  }
+}
+
+// Next button рдХреНрд▓рд┐рдХ рдкрд░ fact change
+function nextFact(){
+  if(facts.length > 0){
+    index = (index + 1) % facts.length;
+    showFact();
+  }
+}
+
+// Page load рдкрд░ fetch рдХрд░реЛ
+window.onload = function(){
+  fetchFacts();
+}
+</script>
+
 </body>
 </html>
