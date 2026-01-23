@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
+<title>FactVerse Hindi  Amazing & Viral Facts</title>
+
+<meta name="description" content="     ,            ">
+
+<meta name="keywords" content="Hindi facts, interesting facts, viral facts, amazing facts">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🔥 Daily Hindi Facts</title>
+<title>ЁЯФе Daily Hindi Facts</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
@@ -76,7 +81,7 @@ button:hover {
 <body>
 
 <div class="container">
-  <h1>🔥 Daily Hindi Facts</h1>
+  <h1>ЁЯФе Daily Hindi Facts</h1>
   <div class="fact" id="fact">Loading...</div>
   <button onclick="nextFact()">Next Fact</button>
 </div>
@@ -89,7 +94,7 @@ const url = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=out:j
 let facts = [];
 let index = 0;
 
-// Google Sheet से facts fetch करना
+// Google Sheet рд╕реЗ facts fetch рдХрд░рдирд╛
 function fetchFacts(){
   fetch(url)
   .then(res => res.text())
@@ -100,7 +105,7 @@ function fetchFacts(){
   });
 }
 
-// Fact दिखाना
+// Fact рджрд┐рдЦрд╛рдирд╛
 function showFact(){
   if(facts.length > 0){
     document.getElementById("fact").innerText = facts[index];
@@ -109,7 +114,7 @@ function showFact(){
   }
 }
 
-// Next button क्लिक पर fact change
+// Next button рдХреНрд▓рд┐рдХ рдкрд░ fact change
 function nextFact(){
   if(facts.length > 0){
     index = (index + 1) % facts.length;
@@ -117,7 +122,7 @@ function nextFact(){
   }
 }
 
-// Page load पर fetch करो
+// Page load рдкрд░ fetch рдХрд░реЛ
 window.onload = function(){
   fetchFacts();
 }
