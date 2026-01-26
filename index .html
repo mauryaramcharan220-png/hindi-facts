@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<title>FactVerse Hindi  Amazing & Viral Facts</title>
+<title>FactVerse Hindi – Amazing & Viral Facts</title>
 
-<meta name="description" content="     ,            ">
-
+<meta name="description" content="Amazing Hindi Facts, Viral Facts, Knowledge, Interesting Facts">
 <meta name="keywords" content="Hindi facts, interesting facts, viral facts, amazing facts">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ЁЯФе Daily Hindi Facts</title>
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
@@ -86,6 +85,7 @@ button:hover {
   <button onclick="nextFact()">Next Fact</button>
 </div>
 
+<!-- Google Sheet facts JS -->
 <script>
 const sheetID = "1_Cii6lhjbcQy3hO3lvdb_yn3HrZF9cmRNpPY2OISXBw";
 const sheetName = "Sheet1";
@@ -94,7 +94,6 @@ const url = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=out:j
 let facts = [];
 let index = 0;
 
-// Google Sheet рд╕реЗ facts fetch рдХрд░рдирд╛
 function fetchFacts(){
   fetch(url)
   .then(res => res.text())
@@ -105,7 +104,6 @@ function fetchFacts(){
   });
 }
 
-// Fact рджрд┐рдЦрд╛рдирд╛
 function showFact(){
   if(facts.length > 0){
     document.getElementById("fact").innerText = facts[index];
@@ -114,7 +112,6 @@ function showFact(){
   }
 }
 
-// Next button рдХреНрд▓рд┐рдХ рдкрд░ fact change
 function nextFact(){
   if(facts.length > 0){
     index = (index + 1) % facts.length;
@@ -122,14 +119,19 @@ function nextFact(){
   }
 }
 
-// Page load рдкрд░ fetch рдХрд░реЛ
 window.onload = function(){
   fetchFacts();
 }
 </script>
-  <script async="async" data-cfasync="false" src="https://pl28569208.effectivegatecpm.com/68b44cb79744ac06bb258e38ced230e0/invoke.js"></script>
-<div id="container-68b44cb79744ac06bb258e38ced230e0"></div>
-  </body>
-</html>
 
+<!-- Adsterra Native Banner -->
+<script async="async" data-cfasync="false"
+src="https://pl28569208.effectivegatecpm.com/68b44cb79744ac06bb258e38ced230e0/invoke.js"></script>
+<div id="container-68b44cb79744ac06bb258e38ced230e0"></div>
+
+<!-- Adsterra Popunder -->
+<script type="text/javascript" src="https://adserver.adsterra.com/trackpop.js?tid=68b44cb79744ac06bb258e38ced230e0"></script>
+
+</body>
+</html>
 
